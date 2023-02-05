@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class App {
@@ -8,7 +7,6 @@ public class App {
     static int choiceNumber;
 
     static int[] newArrRandomNumber = new int[5];
-    static int[][] newArrRandomNumber2D = new int[5][5];
 
     public static void main(String[] args) {
 
@@ -41,9 +39,6 @@ public class App {
             }
         }
     }
-
-    // public static void bubbleSortASC() {
-    // }
 
     public static void randomNumber() {
 
@@ -134,7 +129,26 @@ public class App {
     }
 
     static void selectionSortDESC(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            System.out.println("Result of Pass " + (i + 1));
+            int index = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] > array[index]) {
+                    index = j;
+                    printArray(array);
+                }
+            }
 
+            int smallerNumber = array[index];
+            array[index] = array[i];
+            array[i] = smallerNumber;
+            System.out.println();
+            System.out.println("Result of Pass " + (i + 1));
+            printArray(array);
+            System.out.println();
+        }
+        System.out.println("Result ");
+        printArray(array);
     }
 
     static void printArray(int[] array) {
